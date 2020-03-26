@@ -1,0 +1,29 @@
+created:
+    - database/migrations/2020_03_26_164724_create_videos_table.php
+    - database/migrations/2020_03_26_164725_create_comments_table.php
+    - database/migrations/2020_03_26_164726_create_watches_table.php
+    - app/Video.php
+    - app/Comment.php
+    - app/Watch.php
+    - database/factories/VideoFactory.php
+    - database/factories/CommentFactory.php
+    - database/factories/WatchFactory.php
+    - app/Http/Controllers/VideoController.php
+    - app/Http/Controllers/CommentController.php
+    - app/Http/Controllers/Api/WatchController.php
+    - app/Events/NewComment.php
+    - app/Http/Requests/CommentStoreRequest.php
+    - app/Http/Requests/Api/WatchStoreRequest.php
+    - app/Mail/CommentCreated.php
+    - resources/views/video/index.blade.php
+    - resources/views/video/show.blade.php
+    - resources/views/comment/create.blade.php
+    - tests/Feature/Http/Controllers/VideoControllerTest.php
+    - tests/Feature/Http/Controllers/CommentControllerTest.php
+    - tests/Feature/Http/Controllers/Api/WatchControllerTest.php
+updated:
+    - routes/web.php
+models:
+    Video: { title: string, synopsis: 'longtext nullable', duration: 'decimal:8,2' }
+    Comment: { user_id: id, content: longtext, approved: boolean }
+    Watch: { user_id: id, video_id: id, completed_at: datetime, timestamps: false }

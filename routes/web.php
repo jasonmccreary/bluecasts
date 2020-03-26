@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::resource('video', 'VideoController')->only('index', 'show');
+
+Route::resource('comment', 'CommentController')->only('create', 'store');
+
+Route::resource('watch', 'WatchController')->only('store');
+
